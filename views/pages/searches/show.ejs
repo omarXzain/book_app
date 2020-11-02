@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>book app</title>
+    <link rel="stylesheet" href="/public/styles/reset.css">
+    <link rel="stylesheet" href="/public/styles/layout.css">
+    <link rel="stylesheet" href="/public/styles/modules.css">
+    <link rel="stylesheet" href="/public/styles/base.css">
+</head>
+
+<body>
+    <header>
+        <div id="logo">
+            <h1 class="h1">Books Libarary</h1>
+        </div>
+        <ul>
+            <li>
+                <a href="/"> Home</a>
+            </li>
+            <li>
+                <a href="/search"> Search For your Favourite Book</a>
+            </li>
+
+        </ul>
+    </header>
+    <main>
+        <% bakbook.forEach(book => { %>
+        <section>
+            <img src=" <%=book.images %> " />
+            <h3> <%=book.title%> </h3>
+            <h5><%=book.authors%></h5>
+            <p> <%=book.description%>
+        </section>
+        <hr>
+        <%});%>
+    </main>
+    <footer></footer>
+</body>
+
+</html>

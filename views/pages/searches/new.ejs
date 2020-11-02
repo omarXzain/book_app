@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>book app</title>
+    <link rel="stylesheet" href="/public/styles/reset.css">
+    <link rel="stylesheet" href="/public/styles/layout.css">
+    <link rel="stylesheet" href="/public/styles/modules.css">
+    <link rel="stylesheet" href="/public/styles/base.css">
+</head>
+
+<body>
+    <header>
+        <div id="logo">
+            <h1 id="xc">Books Library</h1>
+        </div>
+        <ul>
+            <li>
+                <a href="/"> home</a>
+            </li>
+            <li>
+                <a href="/search"> Search For A Book</a>
+            </li>
+        </ul>
+
+        <h3 class="h3">Search by Title or Author</h3>
+
+    </header>
+
+
+    <main>
+        <form action="/searches" method="POST">
+
+            <label class="inpoto" for="search">
+                <input type="text" name="search" id="search" placeholder=" Enter a title or author" required>
+            </label>
+
+            <div class="beside">
+                <div class="full">
+                    <label for="title">Title</label>
+                    <input type="radio" name="check" id="title" value="intitle">
+                </div>
+
+                <div class="full">
+                    <label for="author">Author</label>
+                    <input type="radio" name="check" id="author" value="inauthor">
+
+                </div>
+            </div>
+
+            <button class="buttonX">Search Google Books</button>
+
+        </form>
+    </main>
+
+</body>
+
+</html>

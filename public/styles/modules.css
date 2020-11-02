@@ -1,0 +1,41 @@
+body{
+    background-image: url(https://cdn.hipwallpaper.com/i/7/46/Z0ALkR.jpg);
+    background-repeat: no-repeat;
+    background-size: cover;
+    color: white;
+    font-size: 15px;
+    /* word-wrap: break-word; */
+}
+
+form{
+    background-color: azure;
+}
+
+.buttonX{
+    margin-top: 74%;
+    border-radius: 5px;
+    transition: 800ms;
+    height: 28px;
+}
+.buttonX:hover{
+    margin-top: 74%;
+    border-radius: 5px;
+    transition: 800ms;
+    height: 28px;
+    background-color: rgb(153, 28, 153);
+}
+
+.inpoto{
+        position: absolute;
+        top: 40%;
+        left: 44.8%;
+        height: 39px;
+        border-radius: 11px;
+        border: #ff5353 4px dotted;
+}
+input#search {
+    height: 35px;
+    border-radius: 8px;
+}
+
+

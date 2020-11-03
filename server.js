@@ -17,6 +17,7 @@ app.get('/', (req, res) => {
 app.get('/search', (req, res) => {
     res.render('pages/searches/new');
 });
+app.get('*', (request, response) => response.status(404).send('route does not exist'));
 
 // bookHandler Function
 app.post('/searches', bookHandler);
@@ -35,10 +36,10 @@ function bookHandler(req, res) {
 }
 
 function Books(value) {
-    this.images = value.volumeInfo.imageLinks.smallThumbnail;
-    this.title = value.volumeInfo.title;
-    this.author = value.volumeInfo.authors;
-    this.description = value.volumeInfo.description;
+    this.images = value.volumeInfo.imageLinks.smallThumbnail || 'https://placehold.it/200x300';
+    this.title = value.volumeInfo.title || 'No title available';
+    this.author = value.volumeInfo.authors || 'No authors available';
+    this.description = value.volumeInfo.description || 'No description found';
 }
 
 // Error Handler

@@ -8,6 +8,9 @@ const superagent = require('superagent');
 const pg = require('pg');
 const client = new pg.Client(process.env.DATABASE_URL);
 const app = express();
+const methodOverride = require('method-override');
+
+app.use(methodOverride());
 app.use(cors());
 app.use('/public', express.static('public'));
 app.use(express.urlencoded({ extended: true }));
@@ -58,7 +61,7 @@ function bookHandler(req, res) {
         }).catch(err => console.log(err));
 }
 
-function detailsBook() {
+function detailsBook(req, res) {
     let SQL = 'SELECT * FROM booky WHERE id=$1;';
     let values = [req.params.task_id];
     return client.query(SQL, values)
@@ -69,10 +72,10 @@ function detailsBook() {
 
 
 function Books(value) {
-    this.images = value.volumeInfo.imageLinks.smallThumbnail;
-    this.title = value.volumeInfo.title;
-    this.author = value.volumeInfo.authors;
-    this.description = value.volumeInfo.description;
+    this.images = value.volumeInfo.imageLinks.smallThumbnail || 'https://placehold.it/200x300';
+    this.title = value.volumeInfo.title || 'No title available';
+    this.author = value.volumeInfo.authors || 'No authors available';
+    this.description = value.volumeInfo.description || 'No description found';
 }
 
 // Error Handler

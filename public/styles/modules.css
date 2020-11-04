@@ -27,12 +27,13 @@ form{
 
 .inpoto{
         position: absolute;
-        top: 40%;
-        left: 44.8%;
+        top: 46%;
+        left: 44.6%;
         height: 39px;
         border-radius: 11px;
         border: #ff5353 4px dotted;
 }
+
 input#search {
     height: 35px;
     border-radius: 8px;

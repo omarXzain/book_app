@@ -12,14 +12,31 @@
 
 .h3{
     position: absolute;
-    top: 36%;
+    top: 40%;
     left: 45%;
     color: black;
 }
 
 #xc{
     text-align: center;
-    font-size: 25px;
-    color: #ffffff8c;
+    font-size: 50px;
+    color: #ffee00e8;
 
 }
+
+img {
+    border: 8px white dotted;
+    width: 200px;
+}
+
+section{
+    text-align: center;
+    word-wrap: break-word;
+}
+/* #booky{
+    text-align: center;
+    border-color: yellow;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    font-size: 115px;
+    
+} */

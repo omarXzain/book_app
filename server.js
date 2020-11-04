@@ -25,8 +25,18 @@ app.set('view engine', 'ejs');
 app.use(methodOverride('_method'));
 app.use(express.urlencoded({ extended: true }));
 
+
 // Enable CSS
 app.use(express.static('public'));
+
+app.get('/', (req, res) => {
+    res.render('./pages/index')
+});
+app.get('/search', (req, res) => {
+    res.render('pages/searches/new');
+});
+app.get('*', (request, response) => response.status(404).send('route does not exist'));
+
 
 // Book Constructor
 function Book(bookData) {
@@ -59,9 +69,17 @@ function bookShelfFunction(request, response) {
     });
 }
 
+
 // /searches
 function searchFunction(request, response) {
     response.status(200).render('./pages/searches/new');
+
+function Books(value) {
+    this.images = value.volumeInfo.imageLinks.smallThumbnail || 'https://placehold.it/200x300';
+    this.title = value.volumeInfo.title || 'No title available';
+    this.author = value.volumeInfo.authors || 'No authors available';
+    this.description = value.volumeInfo.description || 'No description found';
+
 }
 function resultsFunction(request, response) {
     let searchKey = request.body.search;

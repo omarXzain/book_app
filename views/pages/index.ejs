@@ -4,27 +4,33 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Book App</title>
-    <link rel="stylesheet" href="/public/styles/reset.css">
-    <link rel="stylesheet" href="/public/styles/layout.css">
-    <link rel="stylesheet" href="/public/styles/modules.css">
-    <link rel="stylesheet" href="/public/styles/base.css">
-
+    <%- include('../layout/css.ejs') %>
+    <title>Library</title>
 </head>
 
 <body>
+    <header>
 
+        <%- include('../layout/menu.ejs') %>
+
+    </header>
     <main>
-        <h1 id="booky">Welocome To Booky</h1>
-        <ul>
-            <li>
-                <a href="/"> Home </a> </li>
-            <li>
-                <a href="/search"> Search For A Book</a> </li>
-
-        </ul>
+        <h1><b><%= books.length %></b> Saved Books</h1>
+        <section>
+            <% books.forEach((book) => { %>
+            <article class='book-results'>
+                <img src="<%= book.image_url %>" alt="<%= book.title %>"
+                    onerror="this.src=`https://i.imgur.com/J5LVHEL.jpg`;">
+                <h3><%= book.title %></h3>
+                <h4><%= book.author %></h4>
+                <a href="/books/<%= book.id %>"><button class='button'>View Details</button></a>
+            </article>
+            <% }); %>
+        </section>
     </main>
+    <footer>
 
+    </footer>
 </body>
 
 </html>

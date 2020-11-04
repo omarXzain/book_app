@@ -4,27 +4,30 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
-    <link rel="stylesheet" href="/styles/reset.css">
+    <%- include('../../layout/css.ejs') %>
+    <title>Books Details</title>
 </head>
 
 <body>
+    <header>
+        <%- include('../../layout/menu.ejs') %>
+    </header>
 
-    <header>Best Books!</header>
     <main>
-        <nav>
-            <ul>
-                <li><a href="/">Home</a></li>
-                <li><a href="/new">Search the google API</a></li>
-            </ul>
-        </nav>
-
-
-        <h4><img src="<%= task.image %>"></h4>
-        <p>Title : <%= task.title %></p>
-        <p>Auther : <%= task.author %></p>
-        <p>Description : <%= task.description %></p>
-
+        <section>
+            <% books.forEach((book) => { %>
+            <article class='book-results'>
+                <img src="<%= book.image_url %>" alt="<%= book.title %>"
+                    onerror="this.src=`https://i.imgur.com/J5LVHEL.jpg`;">
+                <h3><%= book.title %></h3>
+                <h4><%= book.author %></h4>
+                <p><%= book.description %></p>
+                <h5><%= book.isbn %></h5>
+                <h6>Bookshelf: To read</h6>
+            </article>
+            <% }); %>
+        </section>
+    </main>
 
 </body>
 

@@ -1,25 +1,6 @@
-.beside{
-    display: flex;
-    margin-left: 24%;
-    color: black;
+body{
+    background-color: grey;
 }
-
-.h1{
-    color: rgb(144, 165, 49);
-    font-size: 55px;
+main{
     text-align: center;
-}
-
-.h3{
-    position: absolute;
-    top: 36%;
-    left: 45%;
-    color: black;
-}
-
-#xc{
-    text-align: center;
-    font-size: 25px;
-    color: #ffffff8c;
-
 }
